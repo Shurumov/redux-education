@@ -10,19 +10,19 @@ export default class Page extends React.Component {
 		return (
 			<div className="ib page">
 				<p>
-					<button className="btn" onClick={this.onYearBtnClick}>
+					<button className="btn" onClick={this.onBtnClick}>
 						2018
 					</button>{' '}
-					<button className="btn" onClick={this.onYearBtnClick}>
+					<button className="btn" onClick={this.onBtnClick}>
 						2017
 					</button>{' '}
-					<button className="btn" onClick={this.onYearBtnClick}>
+					<button className="btn" onClick={this.onBtnClick}>
 						2016
 					</button>{' '}
-					<button className="btn" onClick={this.onYearBtnClick}>
+					<button className="btn" onClick={this.onBtnClick}>
 						2015
 					</button>{' '}
-					<button className="btn" onClick={this.onYearBtnClick}>
+					<button className="btn" onClick={this.onBtnClick}>
 						2014
 					</button>
 				</p>
