@@ -7,7 +7,9 @@ import registerServiceWorker from './registerServiceWorker'
 import './index.css'
 ReactDOM.render(
 	<Provider store={store}>
-		<App />
+		<div className="app">
+			<App />
+		</div>
 	</Provider>,
 	document.getElementById('root')
 )
