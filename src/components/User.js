@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-export default class User extends React.Component {
+export class User extends React.Component {
 	render() {
 		const { name } = this.props
 		return (

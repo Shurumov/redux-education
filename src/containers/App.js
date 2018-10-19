@@ -1,35 +1,35 @@
 import React, { Component } from 'react'
-import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import User from '../components/User'
-import Page from '../components/Page'
-import * as pageActions from '../actions/PageActions'
-
+import { User } from '../components/User'
+import { Page } from '../components/Page'
+import { getPhotos } from '../actions/PageActions'
 class App extends Component {
 	render() {
-		const { user, page } = this.props
-		const { setYear } = this.props.pageActions
+		const { user, page, getPhotosAction } = this.props
 		return (
-			<div className="row">
-				<Page photos={page.photos} year={page.year} setYear={setYear} />
+			<div className="app">
+				<Page
+					photos={page.photos}
+					year={page.year}
+					isFetching={page.isFetching}
+					getPhotos={getPhotosAction}
+				/>
 				<User name={user.name} />
 			</div>
 		)
 	}
 }
-function mapStateToProps(state) {
+const mapStateToProps = store => {
 	return {
-		user: state.user,
-		page: state.page,
+		user: store.user,
+		page: store.page,
 	}
 }
-
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = dispatch => {
 	return {
-		pageActions: bindActionCreators(pageActions, dispatch),
+		getPhotosAction: year => dispatch(getPhotos(year)),
 	}
 }
-
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
